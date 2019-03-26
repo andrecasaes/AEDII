@@ -15,16 +15,16 @@ typedef struct vert{
 }VERTICE;
 
 typedef struct {	
-	VERTICE *adj[MAX];
-	int cor[MAX];
-	int pai[MAX];
-	int ordem[MAX];
-	int minor[MAX];
+	VERTICE *adj[MAX+1];
+	int cor[MAX+1];
+	int pai[MAX+1];
+	int ordem[MAX+1];
+	int minor[MAX+1];
 	int ordemGeral;
 }GRAFO;
 
 void inicializar(GRAFO *G){
-   for(int i = MAX; i > 0; i--){
+   for(int i = 1; i <= MAX; i++){
       G->adj[i] = NULL;
       G->cor[i] = branco;
       G->pai[i] = 0;
@@ -46,7 +46,7 @@ void inserir(GRAFO *G, int indice, int vertice){
 
 void imprimir(GRAFO *G){
 	VERTICE* aux;
-	for (int i = 1; i <= MAX; ++i){
+	for (int i = 1; i <= MAX; i++){
 		aux = G->adj[i];
 		printf("Adjacentes de %i: ",i);
 		while(aux) {
@@ -101,11 +101,11 @@ bool Busca(GRAFO *G){
 		DFS2(G,1);
 	}
 	biconexo = true;
-	for (int i = 1; i <= MAX; ++i){
+	for (int i = 1; i <= MAX; i++){
 		printf("Vertice %i:\n Tem ordem %i e minor %i\n ",i, G->ordem[i], G->minor[i]);
 		if (i != 1 && (G->ordem[i] == G->minor[i])){
-			printf("Esse vertice e critico \n");
-			biconexo =false;
+			printf("\n****\nA Aresta %i - %i e critica! Ela desconecta o Grafo!\n****\n",G->pai[i],i);
+			biconexo = false;
 		}
 		printf("------\n");
 	}
