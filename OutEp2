@@ -1,0 +1,25 @@
+Inicializando Grafo
+Vertice 1:
+ Tem ordem 1 e minor 1
+ ------
+Vertice 2:
+ Tem ordem 2 e minor 1
+ ------
+Vertice 3:
+ Tem ordem 3 e minor 1
+ ------
+Vertice 4:
+ Tem ordem 4 e minor 1
+ ------
+Vertice 5:
+ Tem ordem 5 e minor 1
+ ------
+Vertice 6:
+ Tem ordem 6 e minor 1
+ ------
+O vertice 1 stNum 1
+O vertice 2 stNum 6
+O vertice 3 stNum 5
+O vertice 4 stNum 4
+O vertice 5 stNum 3
+O vertice 6 stNum 2
